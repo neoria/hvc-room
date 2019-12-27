@@ -13,14 +13,16 @@
     }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-light flex-lg-column">
+<nav class="navbar navbar-expand-lg navbar-light flex-lg-column h-100">
     <a href="/hvc-room/" class="navbar-brand m-0">
     ひぶしの部屋
     </a>
     <button class="navbar-toggler" data-target="#g-nav" data-toggle="collapse" aria-controls="g-nav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
-    <div id="g-nav" class="collapse navbar-collapse">
+    <!-- g-navにd-flexとjustify-content-centerを付与すると、小画面の際に左右中央揃えができるが、
+    ドロップダウンの開閉の挙動がバグるため、今は付与しない -->
+    <div id="g-nav" class="collapse navbar-collapse align-items-lg-start">
     <div class="d-flex justify-content-ce
     nter">
         <ul class="mt-3 p-0">
