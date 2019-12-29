@@ -1,76 +1,29 @@
-<!DOCTYPE html>
-<html lang="ja">
+<noscript>お手数ですが、JavaScriptを有効にしてください。</noscript>
+<script src="/hvc-room/global/pageTemplateTop.js"></script>
+<h1 class="h1">ミリ秒時計</h1>
+<div class="time1 text-center">00:00:00.000</div>
+<style>
+  .time1 {
+    font-size: 14vw;
+  }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Material Design Bootstrap ------------------------------ -->
-    <!-- Font Awesome, Bootstrap core CSS, Material Design Bootstrap -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
-
-    <title>ひぶしの部屋</title>
-</head>
-
-<body class="blue-grey lighten-5">
-    <div class="container white z-depth-1">
-        <div class="row">
-
-            <!-- navbar-outer  -->
-            <div class="col-lg-3 p-0 pr-lg-3">
-                <script src="/hvc-room/global/g-nav.js"></script>
-            </div>
-
-            <main class="col-lg-9 mt-4">
-                <h1 class="h1">ミリ秒時計</h1>
-                <div class="time1 text-center">00:00:00.000</div>
-                <style>
-                    .time1 {
-                        font-size: 14vw;
-                    }
-                    @media screen and (min-width: 576px) {
-                        .time1 {
-                            font-size: 5em;
-                        }
-                    }
-
-                </style>
-                <script>
-                    const time = document.getElementsByClassName("time1")[0];
-                    const update = _ => {
-                        const date = new Date();
-                        const h = ("0" + date.getHours()).slice(-2);
-                        const m = ("0" + date.getMinutes()).slice(-2);
-                        const s = ("0" + date.getSeconds()).slice(-2);
-                        const ms = ("00" + date.getMilliseconds()).slice(-3);
-                        time.textContent = `${h}:${m}:${s}.${ms}`;
-                        requestAnimationFrame(update);
-                    }
-                    update();
-                </script>
-            </main>
-
-        </div>
-    </div>
-
-    <!-- My Script ------------------------------ -->
-    <script>
-        // titleをh1の内容と同じにする
-        document.title = document.getElementsByTagName("h1")[0].textContent;
-    </script>
-
-    <!-- Material Design Bootstrap ------------------------------ -->
-    <!-- JQuery, Bootstrap tooltips, Bootstrap core JavaScript, MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
-</body>
-
-</html>
+  @media screen and (min-width: 576px) {
+    .time1 {
+      font-size: 5em;
+    }
+  }
+</style>
+<script>
+  const time = document.getElementsByClassName("time1")[0];
+  const update = _ => {
+    const date = new Date();
+    const h = ("0" + date.getHours()).slice(-2);
+    const m = ("0" + date.getMinutes()).slice(-2);
+    const s = ("0" + date.getSeconds()).slice(-2);
+    const ms = ("00" + date.getMilliseconds()).slice(-3);
+    time.textContent = `${h}:${m}:${s}.${ms}`;
+    requestAnimationFrame(update);
+  }
+  update();
+</script>
+<script src="/hvc-room/global/pageTemplateBottom.js"></script>
