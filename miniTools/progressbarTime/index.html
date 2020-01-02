@@ -1,0 +1,42 @@
+<noscript>お手数ですが、JavaScriptを有効にしてください。</noscript>
+<script src="/hvc-room/global/pageTemplateTop.js"></script>
+
+<h1 class="h1">プログレスバー時計</h1>
+<figure>
+    <figcaption>時</figcaption>
+    <div class="progress">
+        <div class="progress-bar" style="width: 100%"></div>
+    </div>
+</figure>
+<figure>
+    <figcaption>分</figcaption>
+    <div class="progress">
+        <div class="progress-bar" style="width: 100%"></div>
+    </div>
+</figure>
+<figure>
+    <figcaption>秒</figcaption>
+    <div class="progress">
+        <div class="progress-bar" style="width: 100%"></div>
+    </div>
+</figure>
+
+<script>
+    const main = document.getElementsByTagName("main")[0];
+    const progressbars = main.getElementsByClassName("progress-bar");
+    const figcaptions = main.getElementsByTagName("figcaption");
+    const update = _ => {
+        const date = new Date();
+        progressbars[0].style.transform = "translateX(" + (date.getHours() / 24 * 100 - 100) + "%)";
+        progressbars[1].style.transform = "translateX(" + (date.getMinutes() / 60 * 100 - 100) + "%)";
+        progressbars[2].style.transform = "translateX(" + (date.getSeconds() / 60 * 100 - 100) + "%)";
+
+        figcaptions[0].textContent = date.getHours() + "時";
+        figcaptions[1].textContent = date.getMinutes() + "分";
+        figcaptions[2].textContent = date.getSeconds() + "秒";
+        requestAnimationFrame(update);
+    }
+    update();
+</script>
+
+<script src="/hvc-room/global/pageTemplateBottom.js"></script>

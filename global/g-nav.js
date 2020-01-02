@@ -26,14 +26,17 @@
     <div class="d-flex justify-content-ce
     nter">
         <ul class="mt-3 p-0">
-        <li>
-            ミニツール
-        </li>
-        <ul>
             <li>
-            <a href="/hvc-room/miniTools/msTime/index.html" class="text-wrap">ミリ秒時計</a>
+                ミニツール
             </li>
-        </ul>
+            <ul>
+                <li>
+                    <a href="/hvc-room/miniTools/msTime/index.html" class="text-wrap">ミリ秒時計</a>
+                </li>
+                <li>
+                    <a href="/hvc-room/miniTools/progressbarTime/index.html" class="text-wrap">プログレスバー時計</a>
+                </li>
+            </ul>
         </ul>
     </div>
     </div>
