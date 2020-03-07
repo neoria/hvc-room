@@ -13,7 +13,7 @@
     }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-light flex-lg-column h-100">
+<nav class="navbar navbar-expand-lg navbar-light flex-lg-column h-lg-100">
     <a href="/hvc-room/" class="navbar-brand m-0">
     ひぶしの部屋
     </a>
