@@ -19,6 +19,70 @@
   <title>ひぶしの部屋</title>
 </head>
 
+<style>
+  /* 見出しのスキン */
+  :root {
+    --base-size: 16px;
+    --h1-rate: calc(var(--base-size) * 1.8);
+    --h2-rate: calc(var(--base-size) * 1.7);
+    --h3-rate: calc(var(--base-size) * 1.5);
+    --h4-rate: calc(var(--base-size) * 1.3);
+    --h5-rate: calc(var(--base-size) * 1.2);
+    --h6-rate: calc(var(--base-size) * 1);
+    --h1-lg-rate: calc(var(--base-size) * 2.5);
+    --h2-lg-rate: calc(var(--base-size) * 1.8);
+    --h3-lg-rate: calc(var(--base-size) * 1.6);
+    --h4-lg-rate: calc(var(--base-size) * 1.4);
+    --h5-lg-rate: calc(var(--base-size) * 1.2);
+    --h6-lg-rate: calc(var(--base-size) * 1);
+  }
+  .container h1, .container h2, .container h3, .container h4, .container h5, .container h6 {
+    font-weight: bold;
+  }
+  .container h2 {
+    border-bottom: 1px solid #dee2e6;
+  }
+  .container h1 {
+    font-size: var(--h1-rate);
+  }
+  .container h2 {
+    font-size: var(--h2-rate);
+  }
+  .container h3 {
+    font-size: var(--h3-rate);
+  }
+  .container h4 {
+    font-size: var(--h4-rate);
+  }
+  .container h5 {
+    font-size: var(--h5-rate);
+  }
+  .container h6 {
+    font-size: var(--h6-rate);
+  }
+  /* PC */
+  @media screen and (min-width: 992px) {
+    .container h1 {
+      font-size: var(--h1-lg-rate);
+    }
+    .container h2 {
+      font-size: var(--h2-lg-rate);
+    }
+    .container h3 {
+      font-size: var(--h3-lg-rate);
+    }
+    .container h4 {
+      font-size: var(--h4-lg-rate);
+    }
+    .container h5 {
+      font-size: var(--h5-lg-rate);
+    }
+    .container h6 {
+      font-size: var(--h6-lg-rate);
+    }
+  }
+</style>
+
 <body class="blue-grey lighten-5">
   <div class="container white z-depth-1">
     <div class="row">
@@ -29,5 +93,5 @@
       </div>
 
       <main class="col-lg-9 mt-4">
-  `);
+`);
 })();
