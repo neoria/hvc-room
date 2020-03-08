@@ -1,6 +1,7 @@
 ; (_ => {
     document.write(`
 <style>
+    /* PC */
     @media screen and (min-width: 992px) {
     #g-nav {
         font-size: 80%;
