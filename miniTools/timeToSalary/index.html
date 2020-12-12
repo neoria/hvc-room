@@ -1,0 +1,59 @@
+<noscript>
+  このWebサイトの全ての機能を利用するためには、JavaScriptを有効にする必要があります。
+</noscript>
+<script src="/hvc-room/global/pageTemplateTop.js"></script>
+<h1>給料時計</h1>
+<div class="time1 text-center">00:00:00.000</div>
+<div class="salary text-center">00:00:00.000</div>
+<style>
+  .time1 {
+    font-size: 14vw;
+  }
+
+  .salary {
+    font-size: 14vw;
+    text-align: right;
+  }
+
+  @media screen and (min-width: 576px) {
+    .time1, .salary {
+      font-size: 5em;
+    }
+  }
+</style>
+<script>
+  const time = document.getElementsByClassName("time1")[0];
+
+  const salary = document.getElementsByClassName("salary")[0];
+  const salaryPerMonth = 195290;
+  const weekdayCount = 20;
+  const salaryPerDay = salaryPerMonth / weekdayCount;
+  const deltaSalaryPerSecond = salaryPerDay / (3600 * 9);
+
+  const update = _ => {
+    const date = new Date();
+    const h = ("0" + date.getHours()).slice(-2);
+    const m = ("0" + date.getMinutes()).slice(-2);
+    const s = ("0" + date.getSeconds()).slice(-2);
+    time.textContent = `${h}:${m}:${s}`;
+
+    const workStartTime = new Date(new Date().setHours(9, 0, 0, 0));
+    const diff = date - workStartTime;
+    const diffSecond = diff / 1000;
+    if(diffSecond < 0)
+    {
+      salary.textContent = `0円`;
+    }
+    else if (diffSecond > 3600 * 9)
+    {
+      salary.textContent = `${salaryPerDay}円`;
+    }
+    else {
+      const currentSalary = diffSecond * deltaSalaryPerSecond;
+      salary.textContent = `${Math.floor(currentSalary)}円`;
+    }
+    requestAnimationFrame(update);
+  }
+  update();
+</script>
+<script src="/hvc-room/global/pageTemplateBottom.js"></script>

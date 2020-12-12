@@ -37,6 +37,9 @@
                 <li>
                     <a href="/hvc-room/miniTools/progressbarTime/index.html" class="text-wrap">プログレスバー時計</a>
                 </li>
+                <li>
+                    <a href="/hvc-room/miniTools/timeToSalary/index.html" class="text-wrap">給料時計</a>
+                </li>
             </ul>
         </ul>
     </div>
